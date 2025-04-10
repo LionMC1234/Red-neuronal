@@ -1,0 +1,26 @@
+model:
+  active_model: "chatgpt"  # local | chatgpt
+  model_path: "./models/aira_v3"
+  base_architecture: "gpt2-medium"
+  quantization: "4bit"
+  autosave_interval: 300  # segundos
+
+learning:
+  online_learning: true
+  batch_size: 32
+  max_interactions: 1000
+  learning_rate: 
+    initial: 1e-5
+    decay: 0.95
+  validation_split: 0.1
+
+chatgpt:
+  api_version: "v1"
+  rate_limit: 100  # peticiones/minuto
+  max_tokens: 150
+  temperature: 0.7
+
+logging:
+  level: "DEBUG"
+  rotation: "100 MB"
+  retention: "30 days"
